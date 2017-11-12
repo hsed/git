@@ -990,11 +990,11 @@ int git_config_pathname(const char **dest, const char *var, const char *value)
 	return 0;
 }
 
-int git_config_expiry_date(timestamp_t **timestamp, const char *var, const char *value)
+int git_config_expiry_date(timestamp_t *timestamp, const char *var, const char *value)
 {
 	if (!value)
 		return config_error_nonbool(var);
-	if (!!parse_expiry_date(value, *timestamp))
+	if (parse_expiry_date(value, timestamp))
 		die(_("failed to parse date_string in: '%s'"), value);
 	return 0;
 }
