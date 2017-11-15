@@ -163,7 +163,7 @@ static int format_config(struct strbuf *buf, const char *key_, const char *value
 			free((char *)v);
 		} else if (types == TYPE_EXPIRY_DATE) {
 			timestamp_t t;
-			if(git_config_expiry_date(&t, key_, value_) < 0)
+			if (git_config_expiry_date(&t, key_, value_) < 0)
 				return -1;
 			strbuf_addf(buf, "%"PRItime, t);
 		} else if (value_) {
