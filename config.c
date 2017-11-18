@@ -996,7 +996,7 @@ int git_config_expiry_date(timestamp_t *timestamp, const char *var, const char *
 		return config_error_nonbool(var);
 	if (parse_expiry_date(value, timestamp))
 		return error(_("'%s' for '%s' is not a valid timestamp"),
-			     	 value, var);
+			     	value, var);
 	return 0;
 }
 
